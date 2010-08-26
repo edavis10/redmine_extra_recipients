@@ -72,7 +72,7 @@ class ActiveSupport::TestCase
 
   def configure_plugin(configuration_change={})
     Setting.plugin_redmine_extra_recipients = {
-      
+      'recipients' => "test@example.com, test2@example.com\ntest3@example.com"
     }.merge(configuration_change)
   end
 
