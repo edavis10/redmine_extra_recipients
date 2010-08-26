@@ -18,17 +18,21 @@ class ConfigurationTest < ActionController::IntegrationTest
     assert_response :success
 
     fill_in "Recipients", :with => "test@example.com, test2@example.com\ntest3@example.com"
+    choose "Include extra recipients in private projects"
     click_button "Apply"
     assert_response :success
 
     # field populated
     assert_select "textarea#settings_recipients", :text => /example.com/
 
-    recipients = Setting['plugin_redmine_extra_recipients']['recipients']
+    settings = Setting['plugin_redmine_extra_recipients']
+    recipients = settings['recipients']
     assert recipients
     assert recipients.include?('test@example.com')
     assert recipients.include?('test2@example.com')
     assert recipients.include?('test3@example.com')
+
+    assert_equal "include_private", settings['private_project_visibility']
   end
   
 end

@@ -12,7 +12,8 @@ Redmine::Plugin.register :redmine_extra_recipients do
 
   settings(:partial => 'settings/extra_recipients_settings',
            :default => {
-             'recipients' => ''
+             'recipients' => '',
+             'private_project_visibility' => 'exclude_private'
            })
 end
 

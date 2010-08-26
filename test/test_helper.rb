@@ -72,11 +72,12 @@ class ActiveSupport::TestCase
 
   def configure_plugin(configuration_change={})
     Setting.plugin_redmine_extra_recipients = {
-      'recipients' => "test@example.com, test2@example.com\ntest3@example.com"
+      'recipients' => "test@example.com, test2@example.com\ntest3@example.com",
+      'private_project_visibility' => 'include_private'
     }.merge(configuration_change)
   end
 
   def reconfigure_plugin(configuration_change)
-    Settings['plugin_redmine_extra_recipients'] = Setting['plugin_redmine_extra_recipients'].merge(configuration_change)
+    Setting['plugin_redmine_extra_recipients'] = Setting['plugin_redmine_extra_recipients'].merge(configuration_change)
   end
 end

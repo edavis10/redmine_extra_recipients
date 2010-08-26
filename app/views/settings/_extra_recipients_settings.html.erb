@@ -6,3 +6,13 @@
   <br />
   <%= content_tag(:em, l(:text_extra_recipients_recipients_hint)) %>
 </p>
+
+<p>
+  <%= radio_button_tag('settings[private_project_visibility]', 'include_private', @settings['private_project_visibility'] == 'include_private', :id => 'include-setting') %>
+  <%= content_tag(:label, l(:text_extra_recipients_recipients_included_in_email), :for => 'include-setting') %>
+</p>
+
+<p>
+  <%= radio_button_tag('settings[private_project_visibility]', 'exclude_private', @settings['private_project_visibility'] == 'exclude_private', :id => 'exclude-setting') %>
+  <%= content_tag(:label, l(:text_extra_recipients_recipients_not_included_in_email), :for => 'exclude-setting') %>
+</p>

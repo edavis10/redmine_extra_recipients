@@ -21,10 +21,13 @@ module RedmineExtraRecipients
           if Setting['plugin_redmine_extra_recipients'].present? &&
               Setting['plugin_redmine_extra_recipients']['recipients'].present?
 
-            comma_or_newline_regex = /[,\n]/
+            if project.is_public || (!project.is_public && Setting['plugin_redmine_extra_recipients']['private_project_visibility'] == 'include_private')
+            
+              comma_or_newline_regex = /[,\n]/
 
-            extra_recipients = Setting['plugin_redmine_extra_recipients']['recipients']
-            notified += extra_recipients.split(comma_or_newline_regex).collect(&:strip)
+              extra_recipients = Setting['plugin_redmine_extra_recipients']['recipients']
+              notified += extra_recipients.split(comma_or_newline_regex).collect(&:strip)
+            end
           end
           
           notified

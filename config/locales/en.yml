@@ -3,4 +3,6 @@ en:
   label_extra_recipients_recipients: 'Recipients'
   text_extra_recipients_recipients_hint: 'Email addresses, comma separated.'
   text_extra_recipients_general_settings: "The following email addresses will be included in all Issue notifications.  (New issues and issue updates)"
-
+  label_extra_recipients_project_visibility: "Private projects"
+  text_extra_recipients_recipients_included_in_email: "Include extra recipients in private projects"
+  text_extra_recipients_recipients_not_included_in_email: "Don't include extra recipients in private projects"
