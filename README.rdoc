@@ -2,10 +2,6 @@
 
 When emails are sent by Redmine, additional recipients can be added. This is useful to forward all email to a mailing list.
 
-== Features
-
-TODO: fill in features
-
 == Getting the plugin
 
 A copy of the plugin can be downloaded from {Little Stream Software}[https://projects.littlestreamsoftware.com/projects/redmine-recipients/files] or from {GitHub}[http://github.com/edavis10/redmine_extra_recipients]
@@ -14,12 +10,11 @@ A copy of the plugin can be downloaded from {Little Stream Software}[https://pro
 == Installation and Setup
 
 1. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins 
-2. Run the plugin migrations +rake db:migrate_plugins+
-3. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
+2. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails)
 
 == Usage
 
-TODO: Add usage
+Browse to the plugin's administration panel to configure the email addresses to be included in emails.  Separate multiple email addresses with commas.
 
 == License
 
