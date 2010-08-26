@@ -15,3 +15,12 @@ Redmine::Plugin.register :redmine_extra_recipients do
              'recipients' => ''
            })
 end
+
+require 'dispatcher'
+Dispatcher.to_prepare :redmine_extra_recipients do
+
+  require_dependency 'issue'
+  unless Issue.included_modules.include?(RedmineExtraRecipients::Patches::IssuePatch)
+    Issue.send(:include, RedmineExtraRecipients::Patches::IssuePatch)
+  end
+end
