@@ -21,10 +21,10 @@ module RedmineExtraRecipients
           if Setting['plugin_redmine_extra_recipients'].present? &&
               Setting['plugin_redmine_extra_recipients']['recipients'].present?
 
+            comma_or_newline_regex = /[,\n]/
+
             extra_recipients = Setting['plugin_redmine_extra_recipients']['recipients']
-            extra_recipients.split(/[,\n]/).each do |recipient|
-              notified << recipient.strip
-            end
+            notified += extra_recipients.split(comma_or_newline_regex).collect(&:strip)
           end
           
           notified
