@@ -1,0 +1,8 @@
+<%= content_tag(:p, l(:text_extra_recipients_general_settings)) %>
+
+<p>
+  <%= content_tag(:label, l(:label_extra_recipients_recipients), :for => 'settings_recipients') %>
+  <%= text_area_tag('settings[recipients]', @settings['recipients'], :rows => 10, :cols => 80) %>
+  <br />
+  <%= content_tag(:em, l(:text_extra_recipients_recipients_hint)) %>
+</p>

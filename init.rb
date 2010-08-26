@@ -9,4 +9,9 @@ Redmine::Plugin.register :redmine_extra_recipients do
   version '0.1.0'
 
   requires_redmine :version_or_higher => '1.0.0'
+
+  settings(:partial => 'settings/extra_recipients_settings',
+           :default => {
+             'recipients' => ''
+           })
 end
